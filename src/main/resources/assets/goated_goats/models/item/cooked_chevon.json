@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "goated_goats:item/cooked_chevon"
+  }
+}
