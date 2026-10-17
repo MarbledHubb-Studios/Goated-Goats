@@ -2,70 +2,70 @@
   "type": "minecraft:entity",
   "pools": [
     {
-      "bonus_rolls": 0.0,
+      "rolls": 1,
       "entries": [
         {
           "type": "minecraft:item",
+          "name": "minecraft:white_wool",
           "functions": [
             {
-              "add": false,
+              "function": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
-                "max": 1.0,
-                "min": 0.0
-              },
-              "function": "minecraft:set_count"
+                "min": 0,
+                "max": 1
+              }
             },
             {
+              "function": "minecraft:enchanted_count_increase",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              },
+              "enchantment": "minecraft:looting"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "goated_goats:chevon",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              },
               "conditions": [
                 {
-                  "condition": "minecraft:any_of",
-                  "terms": [
-                    {
-                      "condition": "minecraft:entity_properties",
-                      "entity": "this",
-                      "predicate": {
-                        "flags": {
-                          "is_on_fire": true
-                        }
-                      }
-                    },
-                    {
-                      "condition": "minecraft:entity_properties",
-                      "entity": "direct_attacker",
-                      "predicate": {
-                        "equipment": {
-                          "mainhand": {
-                            "predicates": {
-                              "minecraft:enchantments": [
-                                {
-                                  "enchantments": "#minecraft:smelts_loot"
-                                }
-                              ]
-                            }
-                          }
-                        }
-                      }
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "flags": {
+                      "is_on_fire": true
                     }
-                  ]
+                  }
                 }
-              ],
-              "function": "minecraft:furnace_smelt"
+              ]
             },
             {
+              "function": "minecraft:enchanted_count_increase",
               "count": {
-                "type": "minecraft:uniform",
-                "max": 1.0,
-                "min": 0.0
+                "min": 1,
+                "max": 3
               },
-              "enchantment": "minecraft:looting",
-              "function": "minecraft:enchanted_count_increase"
+              "enchantment": "minecraft:looting"
             }
-          ],
-          "name": "marbledschevon:raw_chevon"
+          ]
         }
-      ],
-      "rolls": 1.0
+      ]
     }
   ],
   "random_sequence": "minecraft:entities/goat"

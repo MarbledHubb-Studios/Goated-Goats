@@ -4,9 +4,8 @@
   "cookingtime": 200,
   "experience": 0.35,
   "ingredient": {
-    "item": "marbledschevon:raw_chevon"
+    "item": "goated_goats:chevon"
   },
   "result": {
-    "id": "marbledschevon:cooked_chevon"
-  }
-}
+    "id": "goated_goats:cooked_chevon"
+  }}

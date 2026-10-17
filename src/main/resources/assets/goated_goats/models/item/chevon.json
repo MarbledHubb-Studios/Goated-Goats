@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "marbledschevon:item/raw_chevon"
+    "layer0": "goated_goats:item/chevon"
   }
 }
