@@ -1,0 +1,30 @@
+modLoader="javafml"
+loaderVersion="${loader_version_range}"
+license="All Rights Reserved"
+#issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/" #optional
+
+[[mods]]
+modId="marbledschevon"
+version="1.0.0.0"
+displayName="Marbled's Chevon"
+#updateJSONURL="https://change.me.example.invalid/updates.json" #optional
+#displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
+logoFile="mcn_logo.png"
+credits="MarbledNull, MarbledHubb Studios, Premium members/Donators, Beta Testers"
+authors="MarbledNull"
+
+description='''A mod that adds Chevon (Goat meat)'''
+
+[[dependencies.marbledschevon]]
+    modId="neoforge"
+    type="required"
+    versionRange="${neo_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.marbledschevon]]
+    modId="minecraft"
+    type="required"
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
