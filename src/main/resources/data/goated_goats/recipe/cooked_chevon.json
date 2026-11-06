@@ -3,9 +3,8 @@
   "category": "food",
   "cookingtime": 200,
   "experience": 0.35,
-  "ingredient": {
-    "item": "goated_goats:chevon"
-  },
+  "ingredient": "goated_goats:chevon",
   "result": {
     "id": "goated_goats:cooked_chevon"
-  }}
+  }
+}
