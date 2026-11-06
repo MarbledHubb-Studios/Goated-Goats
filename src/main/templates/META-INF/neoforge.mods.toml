@@ -1,0 +1,27 @@
+license="${mod_license}"
+issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/" #optional
+
+[[mods]]
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+displayURL="https://marbledhubb.com/projects/mods/goated_goats"
+logoFile="gg_icon.png"
+credits=""
+authors=""
+
+description='''A mod that adds Chevon & wool drops to Goats, making them goated.'''
+
+[[dependencies.${mod_id}]]
+    modId="neoforge"
+    type="required"
+    versionRange="[${neo_version},)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="minecraft"
+    type="required"
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"

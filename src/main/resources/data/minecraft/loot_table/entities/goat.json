@@ -1,0 +1,72 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:white_wool",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:enchanted_count_increase",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              },
+              "enchantment": "minecraft:looting"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "goated_goats:chevon",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "flags": {
+                      "is_on_fire": true
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:enchanted_count_increase",
+              "count": {
+                "min": 1,
+                "max": 3
+              },
+              "enchantment": "minecraft:looting"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "random_sequence": "minecraft:entities/goat"
+}
