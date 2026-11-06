@@ -7,8 +7,8 @@ version="${mod_version}"
 displayName="${mod_name}"
 displayURL="https://marbledhubb.com/projects/mods/goated_goats"
 logoFile="gg_icon.png"
-credits=""
-authors=""
+credits="MarbledHubb Studios"
+authors="MarbledNull. WereF0X, Aimiwi"
 
 description='''A mod that adds Chevon & wool drops to Goats, making them goated.'''
 
