@@ -1,5 +1,7 @@
 package com.marbledhubb.goated_goats;
 
+import com.marbledhubb.goated_goats.world.item.ModItems;
+import net.minecraft.world.item.*;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -8,10 +10,6 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.MapColor;
@@ -36,10 +34,30 @@ public class GoatedGoats {
     public GoatedGoats(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
         NeoForge.EVENT_BUS.register(this);
+        modEventBus.addListener(this::onCreativeModeTab);
+
+        ModItems.register(modEventBus);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
 
+    }
+
+    public void onCreativeModeTab(BuildCreativeModeTabContentsEvent event)
+    {
+        {
+            if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS)
+            {
+                addCreativeModeTabEntry(event, ModItems.CHEVON);
+                addCreativeModeTabEntry(event, ModItems.COOKED_CHEVON);
+            }
+        }
+    }
+
+    private void addCreativeModeTabEntry(BuildCreativeModeTabContentsEvent event, DeferredItem<Item> item)
+    {
+        ItemStack itemStack = item.asItem().getDefaultInstance();
+        event.insertBefore(Items.CHICKEN.getDefaultInstance(), itemStack,CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
     }
 
     @SubscribeEvent
